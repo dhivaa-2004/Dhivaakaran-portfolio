@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dhivaakaran B | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio of Dhivaakaran B – MBA student, aspiring marketing & analytics professional."
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons (Font Awesome) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-pIVpG6Y4eTxP1uA2+u55vXPY7KkLh4PZP2a4DypFYL0XoVYl9Q2uZi3d8urH4mT+2kZ5S7l9T7oWqLOqfNm0Kg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root {
+      --bg: #040712;
+      --bg-soft: #080d1f;
+      --card: #0d1224;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.18);
+      --accent-2: #14b8a6;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.65);
+      --radius-lg: 1.75rem;
+      --radius-md: 1.25rem;
+      --radius-pill: 999px;
+      --nav-height: 70px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at 0% 0%, #111827 0, transparent 50%),
+                  radial-gradient(circle at 100% 0%, #1d2445 0, transparent 50%),
+                  var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animated gradient overlay */
+    .bg-gradient-orbit {
+      position: fixed;
+      inset: -40vh -40vw;
+      pointer-events: none;
+      background: conic-gradient(
+        from 180deg,
+        rgba(79, 70, 229, 0.22),
+        rgba(14, 165, 233, 0.18),
+        rgba(56, 189, 248, 0.18),
+        rgba(79, 70, 229, 0.25)
+      );
+      mix-blend-mode: screen;
+      opacity: 0.75;
+      filter: blur(60px);
+      animation: spin 28s linear infinite;
+      z-index: -2;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg) scale(1); }
+      100% { transform: rotate(360deg) scale(1.05); }
+    }
+
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 18px 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Glassy shell */
+    .glass-shell {
+      border-radius: 2.25rem;
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.16), transparent 55%),
+                  linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.92));
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(22px);
+      padding: 0 26px 30px;
+    }
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      margin-bottom: 16px;
+    }
+
+    .nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(20px);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .name-chip {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: radial-gradient(circle at 0 0, rgba(79, 70, 229, 0.4), transparent 55%);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .name-chip-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 6px rgba(20, 184, 166, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      transition: all 0.18s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.96);
+      box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.4);
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      background: none;
+      color: var(--text-main);
+      transition: all 0.18s ease-out;
+    }
+
+    .btn-outline {
+      border-color: rgba(148, 163, 184, 0.55);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9));
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, #4f46e5, #2563eb);
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.55);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.04);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    main {
+      padding: 24px 6px 6px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 32px;
+      padding: 24px 24px 28px;
+      border-radius: 2rem;
+      background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.3), transparent 50%),
+                  linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.92));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.15), transparent 55%);
+      opacity: 0.7;
+      z-index: -1;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-self: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      color: var(--text-muted);
+    }
+
+    .hero-title {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 0.03em;
+      line-height: 1.12;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #e5e7eb, #6366f1);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.92);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 18px;
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-stat-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+    }
+
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit-card {
+      position: relative;
+      width: 260px;
+      aspect-ratio: 4 / 5;
+      border-radius: 1.9rem;
+      background: radial-gradient(circle at 0 0, rgba(79, 70, 229, 0.35), transparent 55%),
+                  linear-gradient(160deg, #020617, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
+      padding: 16px 16px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .orbit-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .orbit-chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .orbit-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      border: 2px solid rgba(79, 70, 229, 0.9);
+      background: radial-gradient(circle at 30% 0%, #22d3ee, #4f46e5, #0f172a);
+      box-shadow: 0 0 0 6px rgba(79, 70, 229, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .orbit-avatar::after {
+      content: "DB";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: rgba(226, 232, 240, 0.96);
+      font-family: "Poppins", system-ui, sans-serif;
+    }
+
+    .orbit-body {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .orbit-footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.75rem;
+    }
+
+    .orbit-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.92);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+    }
+
+    .floating-badge {
+      position: absolute;
+      top: 12%;
+      right: -4%;
+      padding: 8px 12px;
+      border-radius: 1.1rem;
+      font-size: 0.75rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(79, 70, 229, 0.7);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 130px;
+    }
+
+    .floating-badge span:first-child {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .floating-badge span:last-child {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .floating-pill {
+      position: absolute;
+      bottom: 10%;
+      left: -5%;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 0.7rem;
+      background: rgba(15, 23, 42, 0.92);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 32px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 8px;
+    }
+
+    .section-title {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 400px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: var(--radius-md);
+      background: radial-gradient(circle at 0 0, rgba(148, 163, 184, 0.26), transparent 55%),
+                  linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.98);
+      color: var(--text-muted);
+    }
+
+    /* Skills */
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .skill-chip {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.98);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .skill-chip i {
+      font-size: 0.8rem;
+    }
+
+    /* Timeline (Experience & Education) */
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 1px;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(148, 163, 184, 0.9), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 16px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -4px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.28);
+    }
+
+    .timeline-role {
+      font-size: 0.93rem;
+      font-weight: 500;
+    }
+
+    .timeline-org {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .timeline ul {
+      list-style: none;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .timeline ul li {
+      margin-bottom: 3px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-list {
+      font-size: 0.9rem;
+    }
+
+    .contact-list a {
+      color: #a5b4fc;
+      text-decoration: none;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+
+    .mini-input-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .fake-input {
+      font-size: 0.8rem;
+      padding: 8px 10px;
+      border-radius: 0.9rem;
+      border: 1px dashed rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-muted);
+    }
+
+    footer {
+      margin-top: 22px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding-bottom: 6px;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Typewriter */
+    .typewriter {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.92rem;
+      color: #c4b5fd;
+      min-height: 1.2em;
+      white-space: nowrap;
+    }
+
+    .typewriter span {
+      border-right: 2px solid #c4b5fd;
+      padding-right: 4px;
+      animation: caret 0.85s steps(1) infinite;
+    }
+
+    @keyframes caret {
+      50% { border-color: transparent; }
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .glass-shell {
+        padding: 0 18px 26px;
+      }
+
+      .nav {
+        padding-inline: 14px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .orbit-card {
+        width: 220px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-wrap {
+        padding-inline: 12px;
+      }
+
+      .hero {
+        padding: 18px 16px 20px;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .floating-badge {
+        right: 6%;
+        top: 6%;
+      }
+
+      .floating-pill {
+        left: 4%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient-orbit" aria-hidden="true"></div>
+  <div class="page-wrap">
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="name-chip">
+            <span class="name-chip-dot"></span>
+            <span>Dhivaakaran B</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <button
+            class="btn btn-outline"
+            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+          >
+            <i class="fa-regular fa-message"></i>
+            Contact
+          </button>
+          <a
+            class="btn btn-primary"
+            href="DHIVAAKARAN_B_Resume.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-solid fa-arrow-down-long"></i>
+            Resume
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="glass-shell">
+      <main>
+        <!-- HERO -->
+        <section class="hero reveal" id="home">
+          <div class="hero-left">
+            <div class="hero-pill">
+              <i class="fa-solid fa-wave-square"></i>
+              <span>Calm. Analytical. Structured.</span>
+            </div>
+            <h1 class="hero-title">
+              Turning <span>numbers</span> into marketing & business
+              <span>insights.</span>
+            </h1>
+            <p class="hero-subtitle">
+              MBA student with a B.Com Professional Accounting background –
+              comfortable with financials, GST, and audit work, now focusing on
+              digital marketing, consumer behaviour, and data-driven decision making.
+            </p>
+
+            <div class="hero-tags">
+              <div class="tag">
+                <i class="fa-solid fa-chart-line"></i>
+                Marketing & Analytics
+              </div>
+              <div class="tag">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                Accounting Foundation
+              </div>
+              <div class="tag">
+                <i class="fa-solid fa-users"></i>
+                Calm Team Player
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <button
+                class="btn btn-primary"
+                onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})"
+              >
+                <i class="fa-solid fa-diagram-project"></i>
+                View Project
+              </button>
+              <button
+                class="btn btn-outline"
+                onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})"
+              >
+                <i class="fa-regular fa-circle-play"></i>
+                Quick intro
+              </button>
+            </div>
+
+            <div class="hero-stats">
+              <div>
+                <div class="hero-stat-label">Background</div>
+                <div>B.Com (PA) → MBA (ASB)</div>
+              </div>
+              <div>
+                <div class="hero-stat-label">Experience</div>
+                <div>MLPK & Co · HUL Internship</div>
+              </div>
+            </div>
+
+            <div class="typewriter" aria-label="Focus areas">
+              Focus areas:
+              <span id="typewriter-text"></span>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="orbit-card">
+              <div class="orbit-header">
+                <div class="orbit-chip">
+                  <i class="fa-solid fa-location-dot"></i>
+                  Puducherry · India
+                </div>
+                <div class="orbit-avatar" aria-hidden="true"></div>
+              </div>
+              <div class="orbit-body">
+                Calm under pressure, structured in thinking, and motivated by
+                learning, efficiency, and improvement. I enjoy coordinating with
+                teams and translating data into clear next steps.
+              </div>
+              <div class="orbit-footer">
+                <div class="orbit-pill">
+                  <i class="fa-solid fa-database"></i>
+                  Excel · Google Workspace
+                </div>
+                <div class="orbit-pill">
+                  <i class="fa-solid fa-brain"></i>
+                  Analytical mindset
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-badge">
+              <span>Current Path</span>
+              <span>MBA · Marketing & Analytics</span>
+            </div>
+
+            <div class="floating-pill">
+              <i class="fa-solid fa-bolt"></i>
+              Growth mindset · Always learning
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="reveal">
+          <div class="section-header">
+            <h2 class="section-title">About</h2>
+            <p class="section-sub">
+              A bridge between accounting discipline and marketing creativity –
+              with hands-on exposure to financial statements, GST, audit support,
+              and an interest in digital marketing & consumer insights.
+            </p>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <h3 class="card-title">Profile</h3>
+              <p class="card-meta">
+                B.Com Professional Accounting · MBA at Amrita School of Business
+              </p>
+              <p style="font-size:0.9rem; color:var(--text-muted);">
+                I began my journey in accounting, working with financial
+                statements, reconciliations, and GST compliance. That experience
+                trained me to be precise, detail-oriented, and comfortable with
+                numbers. Now, I’m expanding that foundation into marketing –
+                using data to understand consumers, markets, and growth
+                opportunities.
+              </p>
+              <div class="card-tags">
+                <span class="card-tag">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                  Audit & Compliance
+                </span>
+                <span class="card-tag">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  Digital Marketing Interest
+                </span>
+                <span class="card-tag">
+                  <i class="fa-solid fa-magnifying-glass-chart"></i>
+                  Market Research
+                </span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Highlights</h3>
+              <ul style="font-size:0.9rem; color:var(--text-muted); margin-left:1.1rem;">
+                <li>Prepared monthly financial statements & reconciled month-end totals.</li>
+                <li>Supported audit documentation and GST filing accuracy.</li>
+                <li>Observed logistics & distribution at Hindustan Unilever (FMCG supply chain).</li>
+                <li>Conducted a study on branded smartwatch consumer satisfaction and preferences.</li>
+              </ul>
+              <div class="card-tags">
+                <span class="card-tag">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  Accounting & Tax
+                </span>
+                <span class="card-tag">
+                  <i class="fa-solid fa-truck-fast"></i>
+                  FMCG Exposure
+                </span>
+                <span class="card-tag">
+                  <i class="fa-solid fa-user-check"></i>
+                  Consumer Behaviour
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE & EDUCATION -->
+        <section id="experience" class="reveal">
+          <div class="section-header">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-sub">
+              Practical exposure to accounting, audits, GST, and FMCG operations,
+              backed by a solid academic journey.
+            </p>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <h3 class="card-title">Professional Experience</h3>
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-role">Junior Accountant</div>
+                  <div class="timeline-org">MLPK & Co · Puducherry</div>
+                  <div class="timeline-meta">06/2024 – 06/2025</div>
+                  <ul>
+                    <li>Prepared monthly financial statements and reconciled month-end totals.</li>
+                    <li>Supported audit documentation and ensured GST data accuracy.</li>
+                    <li>Collaborated on team-based accounting tasks.</li>
+                  </ul>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-role">Intern</div>
+                  <div class="timeline-org">Hindustan Unilever · logistics & distribution</div>
+                  <div class="timeline-meta">06/2023</div>
+                  <ul>
+                    <li>Observed FMCG supply chain workflow and distribution operations.</li>
+                    <li>Understood how products move from factory to shelves and consumers.</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Education</h3>
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-role">MBA</div>
+                  <div class="timeline-org">Amrita School of Business, Coimbatore</div>
+                  <div class="timeline-meta">2025 – 2027</div>
+                  <ul>
+                    <li>Focusing on marketing, analytics, and decision-making.</li>
+                  </ul>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-role">B.Com (Professional Accounting)</div>
+                  <div class="timeline-org">
+                    Sri Krishna Arts and Science College, Coimbatore
+                  </div>
+                  <div class="timeline-meta">Graduated 2024 · CGPA 6.3</div>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-role">HSC</div>
+                  <div class="timeline-org">
+                    Maharishi International Residential School
+                  </div>
+                  <div class="timeline-meta">79.6% · 2021</div>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-role">SSLC</div>
+                  <div class="timeline-org">Velammal Bodhi Campus</div>
+                  <div class="timeline-meta">69% · 2019</div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="reveal">
+          <div class="section-header">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-sub">
+              A mix of analytical, marketing, and coordination skills – supported
+              by tools you actually use in projects and coursework.
+            </p>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <h3 class="card-title">Core Skills</h3>
+              <div class="skill-chips">
+                <div class="skill-chip">
+                  <i class="fa-solid fa-file-excel"></i>
+                  Data analysis (Excel)
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-magnifying-glass-chart"></i>
+                  Market research
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-pen-nib"></i>
+                  Content creation
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-diagram-project"></i>
+                  Coordination
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-people-group"></i>
+                  Teamwork
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-puzzle-piece"></i>
+                  Analytical thinking
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-clipboard-check"></i>
+                  Audit assistance
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Tools & Interests</h3>
+              <p class="card-meta">What you like working with.</p>
+              <div class="skill-chips">
+                <div class="skill-chip">
+                  <i class="fa-solid fa-table"></i>
+                  MS Excel
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-cloud"></i>
+                  Google Workspace
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-display"></i>
+                  PowerPoint
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-bullseye"></i>
+                  Digital marketing
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-brain"></i>
+                  Data-driven decisions
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-chart-simple"></i>
+                  Market analytics
+                </div>
+                <div class="skill-chip">
+                  <i class="fa-solid fa-user-gear"></i>
+                  Consumer insights
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="reveal">
+          <div class="section-header">
+            <h2 class="section-title">Project</h2>
+            <p class="section-sub">
+              A glimpse into how you think about customers, brands, and what drives
+              satisfaction – using real data.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">
+              Consumer Satisfaction & Preferences Toward Branded Smartwatches
+            </h3>
+            <p class="card-meta">
+              Academic project · Consumer behaviour & brand perception
+            </p>
+            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:8px;">
+              Analysed how consumers decide which smartwatch to buy, which brands
+              they prefer, and what features matter most. The study looked at user
+              demographics, usage patterns, satisfaction levels, and key decision
+              drivers like durability, notifications, features, and design.
+            </p>
+            <ul style="font-size:0.87rem; color:var(--text-muted); margin-left:1.1rem;">
+              <li>Identified top preferred brands – Apple & Samsung as leaders.</li>
+              <li>Mapped expectations vs. satisfaction across features and price points.</li>
+              <li>Segmented users based on usage patterns and feature preferences.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="card-tag">
+                <i class="fa-solid fa-watch-smart"></i>
+                Smartwatch Market
+              </span>
+              <span class="card-tag">
+                <i class="fa-solid fa-chart-column"></i>
+                Survey & Analysis
+              </span>
+              <span class="card-tag">
+                <i class="fa-solid fa-user-group"></i>
+                Consumer Segmentation
+              </span>
+            </div>
+          </div>
+        </section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+  <div class="section-header">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">
+      Open to internships, projects, and roles in marketing, analytics,
+      and operations where a calm, logical problem-solver can add value.
+    </p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="card">
+      <h3 class="card-title">Let’s connect</h3>
+      <div class="contact-list">
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          &nbsp;
+          <a href="mailto:dhivaa007@gmail.com">dhivaa007@gmail.com</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          &nbsp;
+          <a href="tel:+919087035025">+91 90870 35025</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          &nbsp; Puducherry, India
+        </p>
+      </div>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-top:8px;">
+        You can reach out to discuss marketing projects, analytics work,
+        or any opportunity where structured thinking and coordination matter.
+      </p>
+    </div>
+  </div>
+</section>
+
+      </main>
+
+      <footer>
+        © <span id="year"></span> · Designed for
+        <strong>Dhivaakaran B</strong>. Built with clean HTML, CSS, and JavaScript.
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // IntersectionObserver for reveal animation
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealEls.forEach(el => observer.observe(el));
+
+    // Typewriter effect
+    const phrases = [
+      "digital marketing & branding",
+      "data-driven decision making",
+      "market & consumer analytics",
+      "structured problem solving"
+    ];
+    const typewriterSpan = document.getElementById('typewriter-text');
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeLoop() {
+      const current = phrases[phraseIndex];
+      if (!deleting) {
+        charIndex++;
+        if (charIndex === current.length + 3) {
+          deleting = true;
+          setTimeout(typeLoop, 900);
+          typewriterSpan.textContent = current;
+          return;
+        }
+      } else {
+        charIndex--;
+        if (charIndex === 0) {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+      }
+      typewriterSpan.textContent = current.slice(0, charIndex);
+      const delay = deleting ? 40 : 80;
+      setTimeout(typeLoop, delay);
+    }
+
+    if (typewriterSpan) {
+      typeLoop();
+    }
+
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
